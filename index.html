@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cars & Aviation Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -11,28 +12,71 @@
       background: #0b0f14;
       color: #ffffff;
     }
+
     header {
       background: #111827;
       padding: 20px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       color: #38bdf8;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
+
     section {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
-    .card {
-      background: #1f2933;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+
+    h2 {
+      color: #38bdf8;
     }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background: #1f2933;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .info-card:hover {
+      transform: scale(1.03);
+    }
+
+    .info-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .info-card .content {
+      padding: 15px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -41,6 +85,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -52,25 +97,72 @@
   </nav>
 </header>
 
+<!-- CARS SECTION -->
 <section id="cars">
-  <div class="card">
-    <h2>🏎️ Cars</h2>
-    <p>Explore supercars, hypercars, and legendary engines with detailed specifications.</p>
+  <h2>🏎️ Cars</h2>
+
+  <div class="card-grid">
+
+    <div class="info-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Bugatti_Chiron_2018.jpg">
+      <div class="content">
+        <h3>Bugatti Chiron</h3>
+        <p><strong>Top Speed:</strong> 420 km/h</p>
+        <p><strong>Engine:</strong> 8.0L Quad-Turbo W16</p>
+        <p><strong>Power:</strong> 1500 HP</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Lamborghini_Aventador_SVJ.jpg">
+      <div class="content">
+        <h3>Lamborghini Aventador SVJ</h3>
+        <p><strong>Top Speed:</strong> 350 km/h</p>
+        <p><strong>Engine:</strong> 6.5L V12</p>
+        <p><strong>Power:</strong> 770 HP</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- AVIATION SECTION -->
 <section id="aviation">
-  <div class="card">
-    <h2>✈️ Jet Aviation</h2>
-    <p>Learn about fighter jets, maneuvers, speeds, and advanced aviation technology.</p>
+  <h2>✈️ Jet Aviation</h2>
+
+  <div class="card-grid">
+
+    <div class="info-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/F-22_Raptor_-_RIAT_2009_%283751410906%29.jpg">
+      <div class="content">
+        <h3>F-22 Raptor</h3>
+        <p><strong>Role:</strong> Air Superiority</p>
+        <p><strong>Max Speed:</strong> Mach 2.25</p>
+        <p><strong>Ceiling:</strong> 65,000 ft</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Sukhoi_Su-57_in_flight_2020.jpg">
+      <div class="content">
+        <h3>Sukhoi Su-57</h3>
+        <p><strong>Role:</strong> Multirole Stealth</p>
+        <p><strong>Max Speed:</strong> Mach 2.0+</p>
+        <p><strong>Maneuver:</strong> Supermaneuverable</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <div class="card">
-    <h2>About This Site</h2>
-    <p>This website is dedicated to cars and aviation enthusiasts.</p>
-  </div>
+  <h2>About</h2>
+  <p>
+    This website is dedicated to car and aviation enthusiasts.  
+    It features specifications, images, and educational information about
+    high-performance cars and advanced jet aircraft.
+  </p>
 </section>
 
 <footer>
@@ -79,3 +171,4 @@
 
 </body>
 </html>
+
