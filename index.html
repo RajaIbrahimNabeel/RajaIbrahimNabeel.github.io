@@ -3,26 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cars & Aviation Hub</title>
+<title>Cars & Jet Aviation</title>
 
 <style>
-/* ===== THEME COLORS ===== */
 :root {
-  --black: #050a08;
+  --bg: #050a08;
+  --card: #0e1f17;
   --green: #00c853;
   --white: #ffffff;
-  --card: #0e1f17;
 }
 
-/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--black);
+  background: var(--bg);
   color: var(--white);
+  font-family: Arial, sans-serif;
 }
 
-/* ===== HEADER ===== */
 header {
   text-align: center;
   padding: 20px;
@@ -30,98 +27,85 @@ header {
 }
 
 header h1 {
-  margin: 0;
   color: var(--green);
+  margin: 0;
 }
 
-/* ===== SECTIONS ===== */
 section {
-  padding: 30px 20px;
+  padding: 25px;
 }
 
 h2 {
   color: var(--green);
-  margin-bottom: 15px;
 }
 
-/* ===== CARD GRID ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
 }
 
-/* ===== CARD ===== */
 .card {
   background: var(--card);
+  border: 1px solid rgba(0,200,83,.4);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  border: 1px solid rgba(0, 200, 83, 0.3);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: 0.25s;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 200, 83, 0.4);
+  box-shadow: 0 0 15px rgba(0,200,83,.4);
 }
 
 .card img {
   width: 100%;
-  height: 90px;
+  height: 95px;
   object-fit: cover;
 }
 
 .card-title {
-  padding: 8px;
   text-align: center;
   font-size: 13px;
-  color: var(--white);
+  padding: 8px;
 }
 
-/* ===== MODAL ===== */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
-  align-items: center;
+  background: rgba(0,0,0,.85);
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 999;
 }
 
-.modal-content {
+.modal-box {
   background: #0b1a13;
   border: 2px solid var(--green);
-  border-radius: 12px;
-  max-width: 400px;
+  max-width: 500px;
   width: 90%;
+  border-radius: 12px;
   padding: 20px;
   position: relative;
 }
 
-.modal-content img {
+.modal-box img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-.modal-content h3 {
+.modal-box h3 {
   color: var(--green);
-  margin-top: 0;
 }
 
-.modal-content p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* ===== CLOSE BUTTON ===== */
 .close {
   position: absolute;
   top: 10px;
-  right: 15px;
-  color: var(--white);
+  right: 14px;
   font-size: 22px;
   cursor: pointer;
 }
@@ -131,64 +115,21 @@ h2 {
 <body>
 
 <header>
-  <h1>Cars & Aviation Hub</h1>
+  <h1>Cars & Jet Aviation Hub</h1>
 </header>
 
-<!-- ================= CARS ================= -->
 <section>
   <h2>🚗 Cars</h2>
-  <div class="grid">
-
-    <div class="card" onclick="openModal(
-      'Bugatti Chiron',
-      'bugatti.jpg',
-      'Top Speed: 420 km/h<br>Engine: 8.0L Quad-Turbo W16<br>Power: 1500 HP'
-    )">
-      <img src="bugatti.jpg">
-      <div class="card-title">Bugatti Chiron</div>
-    </div>
-
-    <div class="card" onclick="openModal(
-      'Lamborghini Aventador SVJ',
-      'svj.jpg',
-      'Top Speed: 350 km/h<br>Engine: 6.5L V12<br>Power: 770 HP'
-    )">
-      <img src="svj.jpg">
-      <div class="card-title">Aventador SVJ</div>
-    </div>
-
-  </div>
+  <div class="grid" id="carsGrid"></div>
 </section>
 
-<!-- ================= JETS ================= -->
 <section>
   <h2>✈️ Jet Aviation</h2>
-  <div class="grid">
-
-    <div class="card" onclick="openModal(
-      'F-22 Raptor',
-      'f22.jpg',
-      'Role: Air Superiority<br>Max Speed: Mach 2.25<br>Ceiling: 65,000 ft'
-    )">
-      <img src="f22.jpg">
-      <div class="card-title">F-22 Raptor</div>
-    </div>
-
-    <div class="card" onclick="openModal(
-      'JF-17 Thunder',
-      'jf17.jpg',
-      'Role: Multirole Fighter<br>Max Speed: Mach 1.6<br>Origin: Pakistan / China'
-    )">
-      <img src="jf17.jpg">
-      <div class="card-title">JF-17 Thunder</div>
-    </div>
-
-  </div>
+  <div class="grid" id="jetsGrid"></div>
 </section>
 
-<!-- ================= MODAL ================= -->
 <div class="modal" id="modal">
-  <div class="modal-content">
+  <div class="modal-box">
     <span class="close" onclick="closeModal()">✖</span>
     <img id="modalImg">
     <h3 id="modalTitle"></h3>
@@ -196,18 +137,72 @@ h2 {
   </div>
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
-function openModal(title, img, text) {
+const cars = [
+  {
+    name: "Bugatti Chiron",
+    img: "images/cars/chiron.jpg",
+    info: "The Bugatti Chiron is a mid-engine hypercar developed by Bugatti Automobiles. It uses an 8.0-liter quad-turbocharged W16 engine producing up to 1500 horsepower. Designed for extreme performance, it can exceed 420 km/h and represents the peak of modern automotive engineering."
+  },
+  {
+    name: "Lamborghini Aventador SVJ",
+    img: "images/cars/svj.jpg",
+    info: "The Aventador SVJ is Lamborghini’s track-focused flagship. Powered by a naturally aspirated 6.5-liter V12 engine, it produces 770 horsepower. Advanced aerodynamics and lightweight materials allow it to dominate lap records worldwide."
+  },
+  {
+    name: "Ferrari LaFerrari",
+    img: "images/cars/laferrari.jpg",
+    info: "LaFerrari is Ferrari’s first hybrid hypercar, combining a V12 engine with electric motors. The HY-KERS system boosts performance while improving efficiency, making it one of the most technologically advanced Ferraris ever built."
+  },
+  // 👉 ADD MORE (up to 30+ easily)
+];
+
+const jets = [
+  {
+    name: "F-22 Raptor",
+    img: "images/jets/f22.jpg",
+    info: "The F-22 Raptor is a fifth-generation stealth fighter developed by the United States. It features supercruise capability, thrust-vectoring, and advanced avionics, making it one of the most dominant air-superiority fighters in history."
+  },
+  {
+    name: "JF-17 Thunder",
+    img: "images/jets/jf17.jpg",
+    info: "The JF-17 Thunder is a lightweight multirole fighter jointly developed by Pakistan and China. Designed for affordability and versatility, it supports modern avionics, beyond-visual-range missiles, and multirole combat missions."
+  },
+  {
+    name: "Sukhoi Su-57",
+    img: "images/jets/su57.jpg",
+    info: "The Su-57 is Russia’s fifth-generation stealth fighter. It emphasizes supermaneuverability, advanced sensors, and multirole capabilities, combining stealth with high-performance aerodynamics."
+  },
+  // 👉 ADD MORE (up to 30+ easily)
+];
+
+function generateCards(list, containerId) {
+  const grid = document.getElementById(containerId);
+  list.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${item.img}">
+      <div class="card-title">${item.name}</div>
+    `;
+    card.onclick = () => openModal(item);
+    grid.appendChild(card);
+  });
+}
+
+function openModal(item) {
   document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalTitle").innerHTML = title;
-  document.getElementById("modalImg").src = img;
-  document.getElementById("modalText").innerHTML = text;
+  document.getElementById("modalTitle").innerText = item.name;
+  document.getElementById("modalImg").src = item.img;
+  document.getElementById("modalText").innerText = item.info;
 }
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
+
+generateCards(cars, "carsGrid");
+generateCards(jets, "jetsGrid");
 </script>
 
 </body>
