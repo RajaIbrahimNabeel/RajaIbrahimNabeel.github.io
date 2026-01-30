@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cars & Aviation Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Cars & Aviation Hub</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0f14;
-  color: #ffffff;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
 
-header {
-  background: #111827;
-  padding: 20px;
-  text-align: center;
-}
+    header {
+      background: #0e1a2b;
+      padding: 20px;
+      text-align: center;
+    }
 
-nav a {
-  color: #38bdf8;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+    header h1 {
+      margin: 0;
+      color: #00bfff;
+    }
 
-section {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
+    nav a {
+      margin: 0 15px;
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-h2 {
-  color: #38bdf8;
-}
+    section {
+      padding: 40px;
+    }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
+    h2 {
+      color: #00bfff;
+      margin-bottom: 20px;
+    }
 
-.info-card {
-  background: #1f2933;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-.info-card:hover {
-  transform: scale(1.03);
-}
+    .card {
+      background: #1a2433;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
 
-.info-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+    .card:hover {
+      transform: translateY(-8px);
+    }
 
-.content {
-  padding: 15px;
-}
+    .card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111827;
-  color: #9ca3af;
-}
-</style>
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #00bfff;
+    }
+
+    .card p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0e1a2b;
+      color: #aaa;
+    }
+  </style>
 </head>
 
 <body>
@@ -78,228 +92,81 @@ footer {
   <h1>Cars & Aviation Hub</h1>
   <nav>
     <a href="#cars">Cars</a>
-    <a href="#aviation">Aviation</a>
+    <a href="#jets">Aviation</a>
   </nav>
 </header>
 
 <!-- ================= CARS ================= -->
 <section id="cars">
-<h2>🏎️ Cars</h2>
-<div class="card-grid">
+  <h2>🚗 Cars</h2>
 
-<div class="info-card">
-<img src="images/cars/bugatti.jpeg">
-<div class="content">
-<h3>Bugatti Chiron</h3>
-<p>Top Speed: 420 km/h</p>
-<p>Engine: 8.0L W16</p>
-<p>Power: 1500 HP</p>
-</div>
-</div>
+  <div class="grid">
 
-<div class="info-card">
-<img src="images/cars/svj.jpeg">
-<div class="content">
-<h3>Lamborghini Aventador SVJ</h3>
-<p>Top Speed: 350 km/h</p>
-<p>Engine: 6.5L V12</p>
-<p>Power: 770 HP</p>
-</div>
-</div>
+    <div class="card">
+      <img src="bugatti.jpeg.jpg" alt="Bugatti Chiron">
+      <div class="card-content">
+        <h3>Bugatti Chiron</h3>
+        <p>Top Speed: 420 km/h</p>
+        <p>Engine: 8.0L Quad-Turbo W16</p>
+        <p>Power: 1500 HP</p>
+      </div>
+    </div>
 
-<div class="info-card">
-<img src="images/cars/supra.jpeg">
-<div class="content">
-<h3>Toyota Supra MK4</h3>
-<p>Top Speed: 250 km/h</p>
-<p>Engine: 3.0L 2JZ</p>
-<p>Power: 320 HP</p>
-</div>
-</div>
+    <div class="card">
+      <img src="svj.jpeg.avif" alt="Lamborghini Aventador SVJ">
+      <div class="card-content">
+        <h3>Lamborghini Aventador SVJ</h3>
+        <p>Top Speed: 350 km/h</p>
+        <p>Engine: 6.5L V12</p>
+        <p>Power: 770 HP</p>
+      </div>
+    </div>
 
-<div class="info-card">
-<img src="images/cars/gtr.jpeg">
-<div class="content">
-<h3>Nissan GT-R R35</h3>
-<p>Top Speed: 315 km/h</p>
-<p>Engine: 3.8L V6</p>
-<p>Power: 565 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/chironss.jpeg">
-<div class="content">
-<h3>Chiron Super Sport</h3>
-<p>Top Speed: 490 km/h</p>
-<p>Engine: 8.0L W16</p>
-<p>Power: 1600 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/ferrari488.jpeg">
-<div class="content">
-<h3>Ferrari 488 GTB</h3>
-<p>Top Speed: 330 km/h</p>
-<p>Engine: 3.9L V8</p>
-<p>Power: 661 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/laferrari.jpeg">
-<div class="content">
-<h3>LaFerrari</h3>
-<p>Top Speed: 350 km/h</p>
-<p>Engine: V12 Hybrid</p>
-<p>Power: 950 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/porsche911.jpeg">
-<div class="content">
-<h3>Porsche 911 Turbo S</h3>
-<p>Top Speed: 330 km/h</p>
-<p>Engine: 3.7L Flat-6</p>
-<p>Power: 640 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/mclaren720s.jpeg">
-<div class="content">
-<h3>McLaren 720S</h3>
-<p>Top Speed: 341 km/h</p>
-<p>Engine: 4.0L V8</p>
-<p>Power: 710 HP</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/cars/koenigsegg.jpeg">
-<div class="content">
-<h3>Koenigsegg Jesko</h3>
-<p>Top Speed: 480+ km/h</p>
-<p>Engine: 5.0L V8</p>
-<p>Power: 1600 HP</p>
-</div>
-</div>
-
-</div>
+  </div>
 </section>
 
 <!-- ================= JETS ================= -->
-<section id="aviation">
-<h2>✈️ Jet Aviation</h2>
-<div class="card-grid">
+<section id="jets">
+  <h2>✈️ Jet Aviation</h2>
 
-<div class="info-card">
-<img src="images/jets/f22.jpeg">
-<div class="content">
-<h3>F-22 Raptor</h3>
-<p>Role: Air Superiority</p>
-<p>Speed: Mach 2.25</p>
-<p>Ceiling: 65,000 ft</p>
-</div>
-</div>
+  <div class="grid">
 
-<div class="info-card">
-<img src="images/jets/su57.jpeg">
-<div class="content">
-<h3>Sukhoi Su-57</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 2.0+</p>
-<p>Maneuver: Supermaneuverable</p>
-</div>
-</div>
+    <div class="card">
+      <img src="f22.jpeg.jpg" alt="F-22 Raptor">
+      <div class="card-content">
+        <h3>F-22 Raptor</h3>
+        <p>Role: Air Superiority</p>
+        <p>Max Speed: Mach 2.25</p>
+        <p>Ceiling: 65,000 ft</p>
+      </div>
+    </div>
 
-<div class="info-card">
-<img src="images/jets/f35.jpeg">
-<div class="content">
-<h3>F-35 Lightning II</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 1.6</p>
-<p>Stealth: Yes</p>
-</div>
-</div>
+    <div class="card">
+      <img src="su57.jpeg.jpg" alt="Sukhoi Su-57">
+      <div class="card-content">
+        <h3>Sukhoi Su-57</h3>
+        <p>Role: Multirole Stealth</p>
+        <p>Max Speed: Mach 2.0+</p>
+        <p>Maneuver: Supermaneuverable</p>
+      </div>
+    </div>
 
-<div class="info-card">
-<img src="images/jets/rafale.jpeg">
-<div class="content">
-<h3>Dassault Rafale</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 1.8</p>
-<p>Country: France</p>
-</div>
-</div>
+    <!-- 🔥 JF-17 Thunder (REPLACED RAFALE) -->
+    <div class="card">
+      <img src="jf17.jpeg.jpg" alt="JF-17 Thunder">
+      <div class="card-content">
+        <h3>JF-17 Thunder</h3>
+        <p>Role: Multirole Fighter</p>
+        <p>Max Speed: Mach 1.6</p>
+        <p>Origin: Pakistan / China</p>
+      </div>
+    </div>
 
-<div class="info-card">
-<img src="images/jets/f16.jpeg">
-<div class="content">
-<h3>F-16 Fighting Falcon</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 2.0</p>
-<p>Agility: High</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/jets/eurofighter.jpeg">
-<div class="content">
-<h3>Eurofighter Typhoon</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 2.0</p>
-<p>Agility: Extreme</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/jets/mig29.jpeg">
-<div class="content">
-<h3>MiG-29</h3>
-<p>Role: Air Superiority</p>
-<p>Speed: Mach 2.25</p>
-<p>Origin: Russia</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/jets/j20.jpeg">
-<div class="content">
-<h3>Chengdu J-20</h3>
-<p>Role: Stealth Fighter</p>
-<p>Speed: Mach 2.0</p>
-<p>Country: China</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/jets/f18.jpeg">
-<div class="content">
-<h3>F/A-18 Super Hornet</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 1.8</p>
-<p>Carrier Capable</p>
-</div>
-</div>
-
-<div class="info-card">
-<img src="images/jets/gripen.jpeg">
-<div class="content">
-<h3>Saab JAS 39 Gripen</h3>
-<p>Role: Multirole</p>
-<p>Speed: Mach 2.0</p>
-<p>Country: Sweden</p>
-</div>
-</div>
-
-</div>
+  </div>
 </section>
 
 <footer>
-© 2026 Cars & Aviation Hub
+  © 2026 Cars & Aviation Hub
 </footer>
 
 </body>
