@@ -2,173 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cars & Aviation Hub</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1220;
-      color: white;
-    }
-
-    header {
-      background: #0e1a2b;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #00bfff;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: #00bfff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 40px;
-    }
-
-    h2 {
-      color: #00bfff;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #1a2433;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #00bfff;
-    }
-
-    .card p {
-      margin: 6px 0;
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0e1a2b;
-      color: #aaa;
-    }
-  </style>
+  <title>Cars & Fighter Jets</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-  <h1>Cars & Aviation Hub</h1>
-  <nav>
-    <a href="#cars">Cars</a>
-    <a href="#jets">Aviation</a>
-  </nav>
+  <h1>Cars & Fighter Jets</h1>
+  <p>Speed • Power • Engineering</p>
 </header>
 
 <!-- ================= CARS ================= -->
-<section id="cars">
-  <h2>🚗 Cars</h2>
+<h2 class="section-title">Cars</h2>
 
-  <div class="grid">
+<section class="cards">
 
-    <div class="card">
-      <img src="bugatti.jpeg.jpg" alt="Bugatti Chiron">
-      <div class="card-content">
-        <h3>Bugatti Chiron</h3>
-        <p>Top Speed: 420 km/h</p>
-        <p>Engine: 8.0L Quad-Turbo W16</p>
-        <p>Power: 1500 HP</p>
-      </div>
-    </div>
+<a class="card" href="cars/nsx.html"><h3>Honda NSX</h3></a>
+<a class="card" href="cars/supra.html"><h3>Toyota Supra MK4</h3></a>
+<a class="card" href="cars/gtr.html"><h3>Nissan GTR R35</h3></a>
+<a class="card" href="cars/chiron.html"><h3>Bugatti Chiron</h3></a>
+<a class="card" href="cars/veyron.html"><h3>Bugatti Veyron</h3></a>
+<a class="card" href="cars/aventador.html"><h3>Lamborghini Aventador</h3></a>
+<a class="card" href="cars/huracan.html"><h3>Lamborghini Huracán</h3></a>
+<a class="card" href="cars/ferrari488.html"><h3>Ferrari 488</h3></a>
+<a class="card" href="cars/f40.html"><h3>Ferrari F40</h3></a>
+<a class="card" href="cars/sf90.html"><h3>Ferrari SF90</h3></a>
+<a class="card" href="cars/911.html"><h3>Porsche 911</h3></a>
+<a class="card" href="cars/918.html"><h3>Porsche 918</h3></a>
+<a class="card" href="cars/mclarenp1.html"><h3>McLaren P1</h3></a>
+<a class="card" href="cars/senna.html"><h3>McLaren Senna</h3></a>
+<a class="card" href="cars/agera.html"><h3>Koenigsegg Agera</h3></a>
+<a class="card" href="cars/jesko.html"><h3>Koenigsegg Jesko</h3></a>
+<a class="card" href="cars/zonda.html"><h3>Pagani Zonda</h3></a>
+<a class="card" href="cars/huayra.html"><h3>Pagani Huayra</h3></a>
+<a class="card" href="cars/gt.html"><h3>Ford GT</h3></a>
+<a class="card" href="cars/mustang.html"><h3>Ford Mustang GT</h3></a>
+<a class="card" href="cars/corvette.html"><h3>Chevrolet Corvette C8</h3></a>
+<a class="card" href="cars/camaro.html"><h3>Chevrolet Camaro</h3></a>
+<a class="card" href="cars/charger.html"><h3>Dodge Charger</h3></a>
+<a class="card" href="cars/challenger.html"><h3>Dodge Challenger</h3></a>
+<a class="card" href="cars/rs7.html"><h3>Audi RS7</h3></a>
+<a class="card" href="cars/r8.html"><h3>Audi R8</h3></a>
+<a class="card" href="cars/bmwm5.html"><h3>BMW M5</h3></a>
+<a class="card" href="cars/bmwm4.html"><h3>BMW M4</h3></a>
+<a class="card" href="cars/amggt.html"><h3>AMG GT</h3></a>
+<a class="card" href="cars/sls.html"><h3>Mercedes SLS</h3></a>
 
-    <div class="card">
-      <img src="svj.jpeg.avif" alt="Lamborghini Aventador SVJ">
-      <div class="card-content">
-        <h3>Lamborghini Aventador SVJ</h3>
-        <p>Top Speed: 350 km/h</p>
-        <p>Engine: 6.5L V12</p>
-        <p>Power: 770 HP</p>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <!-- ================= JETS ================= -->
-<section id="jets">
-  <h2>✈️ Jet Aviation</h2>
+<h2 class="section-title">Fighter Jets</h2>
 
-  <div class="grid">
+<section class="cards">
 
-    <div class="card">
-      <img src="f22.jpeg.jpg" alt="F-22 Raptor">
-      <div class="card-content">
-        <h3>F-22 Raptor</h3>
-        <p>Role: Air Superiority</p>
-        <p>Max Speed: Mach 2.25</p>
-        <p>Ceiling: 65,000 ft</p>
-      </div>
-    </div>
+<a class="card" href="jets/f22.html"><h3>F-22 Raptor</h3></a>
+<a class="card" href="jets/f35.html"><h3>F-35 Lightning II</h3></a>
+<a class="card" href="jets/f16.html"><h3>F-16 Fighting Falcon</h3></a>
+<a class="card" href="jets/f15.html"><h3>F-15 Eagle</h3></a>
+<a class="card" href="jets/f18.html"><h3>F/A-18 Super Hornet</h3></a>
+<a class="card" href="jets/su57.html"><h3>Su-57 Felon</h3></a>
+<a class="card" href="jets/su35.html"><h3>Su-35</h3></a>
+<a class="card" href="jets/su30.html"><h3>Su-30</h3></a>
+<a class="card" href="jets/mig29.html"><h3>MiG-29</h3></a>
+<a class="card" href="jets/mig31.html"><h3>MiG-31</h3></a>
+<a class="card" href="jets/j20.html"><h3>J-20 Mighty Dragon</h3></a>
+<a class="card" href="jets/j10.html"><h3>J-10</h3></a>
+<a class="card" href="jets/rafale.html"><h3>Dassault Rafale</h3></a>
+<a class="card" href="jets/typhoon.html"><h3>Eurofighter Typhoon</h3></a>
+<a class="card" href="jets/gripen.html"><h3>Saab Gripen</h3></a>
+<a class="card" href="jets/f14.html"><h3>F-14 Tomcat</h3></a>
+<a class="card" href="jets/f4.html"><h3>F-4 Phantom</h3></a>
+<a class="card" href="jets/mirage2000.html"><h3>Mirage 2000</h3></a>
+<a class="card" href="jets/tejas.html"><h3>HAL Tejas</h3></a>
+<a class="card" href="jets/kaanf.html"><h3>KAAN (TF-X)</h3></a>
+<a class="card" href="jets/fc31.html"><h3>FC-31</h3></a>
+<a class="card" href="jets/lca.html"><h3>LCA Mk2</h3></a>
+<a class="card" href="jets/a10.html"><h3>A-10 Warthog</h3></a>
+<a class="card" href="jets/b2.html"><h3>B-2 Spirit</h3></a>
+<a class="card" href="jets/b21.html"><h3>B-21 Raider</h3></a>
+<a class="card" href="jets/sr71.html"><h3>SR-71 Blackbird</h3></a>
+<a class="card" href="jets/f117.html"><h3>F-117 Nighthawk</h3></a>
+<a class="card" href="jets/yf23.html"><h3>YF-23</h3></a>
+<a class="card" href="jets/x47b.html"><h3>X-47B</h3></a>
+<a class="card" href="jets/kf21.html"><h3>KF-21 Boramae</h3></a>
 
-    <div class="card">
-      <img src="su57.jpeg.jpg" alt="Sukhoi Su-57">
-      <div class="card-content">
-        <h3>Sukhoi Su-57</h3>
-        <p>Role: Multirole Stealth</p>
-        <p>Max Speed: Mach 2.0+</p>
-        <p>Maneuver: Supermaneuverable</p>
-      </div>
-    </div>
-
-    <!-- 🔥 JF-17 Thunder (REPLACED RAFALE) -->
-    <div class="card">
-      <img src="jf17.jpeg.jpg" alt="JF-17 Thunder">
-      <div class="card-content">
-        <h3>JF-17 Thunder</h3>
-        <p>Role: Multirole Fighter</p>
-        <p>Max Speed: Mach 1.6</p>
-        <p>Origin: Pakistan / China</p>
-      </div>
-    </div>
-
-  </div>
 </section>
-
-<footer>
-  © 2026 Cars & Aviation Hub
-</footer>
 
 </body>
 </html>
+
 
