@@ -1,94 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cars & Fighter Jets</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cars & Aviation Hub</title>
+
+<style>
+/* ===== THEME COLORS ===== */
+:root {
+  --black: #050a08;
+  --green: #00c853;
+  --white: #ffffff;
+  --card: #0e1f17;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--green);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--green);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 30px 20px;
+}
+
+h2 {
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+/* ===== CARD GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 200, 83, 0.3);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 200, 83, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.card-title {
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--white);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0b1a13;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+.modal-content p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: var(--white);
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Cars & Fighter Jets</h1>
-  <p>Speed • Power • Engineering</p>
+  <h1>Cars & Aviation Hub</h1>
 </header>
 
 <!-- ================= CARS ================= -->
-<h2 class="section-title">Cars</h2>
+<section>
+  <h2>🚗 Cars</h2>
+  <div class="grid">
 
-<section class="cards">
+    <div class="card" onclick="openModal(
+      'Bugatti Chiron',
+      'bugatti.jpg',
+      'Top Speed: 420 km/h<br>Engine: 8.0L Quad-Turbo W16<br>Power: 1500 HP'
+    )">
+      <img src="bugatti.jpg">
+      <div class="card-title">Bugatti Chiron</div>
+    </div>
 
-<a class="card" href="cars/nsx.html"><h3>Honda NSX</h3></a>
-<a class="card" href="cars/supra.html"><h3>Toyota Supra MK4</h3></a>
-<a class="card" href="cars/gtr.html"><h3>Nissan GTR R35</h3></a>
-<a class="card" href="cars/chiron.html"><h3>Bugatti Chiron</h3></a>
-<a class="card" href="cars/veyron.html"><h3>Bugatti Veyron</h3></a>
-<a class="card" href="cars/aventador.html"><h3>Lamborghini Aventador</h3></a>
-<a class="card" href="cars/huracan.html"><h3>Lamborghini Huracán</h3></a>
-<a class="card" href="cars/ferrari488.html"><h3>Ferrari 488</h3></a>
-<a class="card" href="cars/f40.html"><h3>Ferrari F40</h3></a>
-<a class="card" href="cars/sf90.html"><h3>Ferrari SF90</h3></a>
-<a class="card" href="cars/911.html"><h3>Porsche 911</h3></a>
-<a class="card" href="cars/918.html"><h3>Porsche 918</h3></a>
-<a class="card" href="cars/mclarenp1.html"><h3>McLaren P1</h3></a>
-<a class="card" href="cars/senna.html"><h3>McLaren Senna</h3></a>
-<a class="card" href="cars/agera.html"><h3>Koenigsegg Agera</h3></a>
-<a class="card" href="cars/jesko.html"><h3>Koenigsegg Jesko</h3></a>
-<a class="card" href="cars/zonda.html"><h3>Pagani Zonda</h3></a>
-<a class="card" href="cars/huayra.html"><h3>Pagani Huayra</h3></a>
-<a class="card" href="cars/gt.html"><h3>Ford GT</h3></a>
-<a class="card" href="cars/mustang.html"><h3>Ford Mustang GT</h3></a>
-<a class="card" href="cars/corvette.html"><h3>Chevrolet Corvette C8</h3></a>
-<a class="card" href="cars/camaro.html"><h3>Chevrolet Camaro</h3></a>
-<a class="card" href="cars/charger.html"><h3>Dodge Charger</h3></a>
-<a class="card" href="cars/challenger.html"><h3>Dodge Challenger</h3></a>
-<a class="card" href="cars/rs7.html"><h3>Audi RS7</h3></a>
-<a class="card" href="cars/r8.html"><h3>Audi R8</h3></a>
-<a class="card" href="cars/bmwm5.html"><h3>BMW M5</h3></a>
-<a class="card" href="cars/bmwm4.html"><h3>BMW M4</h3></a>
-<a class="card" href="cars/amggt.html"><h3>AMG GT</h3></a>
-<a class="card" href="cars/sls.html"><h3>Mercedes SLS</h3></a>
+    <div class="card" onclick="openModal(
+      'Lamborghini Aventador SVJ',
+      'svj.jpg',
+      'Top Speed: 350 km/h<br>Engine: 6.5L V12<br>Power: 770 HP'
+    )">
+      <img src="svj.jpg">
+      <div class="card-title">Aventador SVJ</div>
+    </div>
 
+  </div>
 </section>
 
 <!-- ================= JETS ================= -->
-<h2 class="section-title">Fighter Jets</h2>
+<section>
+  <h2>✈️ Jet Aviation</h2>
+  <div class="grid">
 
-<section class="cards">
+    <div class="card" onclick="openModal(
+      'F-22 Raptor',
+      'f22.jpg',
+      'Role: Air Superiority<br>Max Speed: Mach 2.25<br>Ceiling: 65,000 ft'
+    )">
+      <img src="f22.jpg">
+      <div class="card-title">F-22 Raptor</div>
+    </div>
 
-<a class="card" href="jets/f22.html"><h3>F-22 Raptor</h3></a>
-<a class="card" href="jets/f35.html"><h3>F-35 Lightning II</h3></a>
-<a class="card" href="jets/f16.html"><h3>F-16 Fighting Falcon</h3></a>
-<a class="card" href="jets/f15.html"><h3>F-15 Eagle</h3></a>
-<a class="card" href="jets/f18.html"><h3>F/A-18 Super Hornet</h3></a>
-<a class="card" href="jets/su57.html"><h3>Su-57 Felon</h3></a>
-<a class="card" href="jets/su35.html"><h3>Su-35</h3></a>
-<a class="card" href="jets/su30.html"><h3>Su-30</h3></a>
-<a class="card" href="jets/mig29.html"><h3>MiG-29</h3></a>
-<a class="card" href="jets/mig31.html"><h3>MiG-31</h3></a>
-<a class="card" href="jets/j20.html"><h3>J-20 Mighty Dragon</h3></a>
-<a class="card" href="jets/j10.html"><h3>J-10</h3></a>
-<a class="card" href="jets/rafale.html"><h3>Dassault Rafale</h3></a>
-<a class="card" href="jets/typhoon.html"><h3>Eurofighter Typhoon</h3></a>
-<a class="card" href="jets/gripen.html"><h3>Saab Gripen</h3></a>
-<a class="card" href="jets/f14.html"><h3>F-14 Tomcat</h3></a>
-<a class="card" href="jets/f4.html"><h3>F-4 Phantom</h3></a>
-<a class="card" href="jets/mirage2000.html"><h3>Mirage 2000</h3></a>
-<a class="card" href="jets/tejas.html"><h3>HAL Tejas</h3></a>
-<a class="card" href="jets/kaanf.html"><h3>KAAN (TF-X)</h3></a>
-<a class="card" href="jets/fc31.html"><h3>FC-31</h3></a>
-<a class="card" href="jets/lca.html"><h3>LCA Mk2</h3></a>
-<a class="card" href="jets/a10.html"><h3>A-10 Warthog</h3></a>
-<a class="card" href="jets/b2.html"><h3>B-2 Spirit</h3></a>
-<a class="card" href="jets/b21.html"><h3>B-21 Raider</h3></a>
-<a class="card" href="jets/sr71.html"><h3>SR-71 Blackbird</h3></a>
-<a class="card" href="jets/f117.html"><h3>F-117 Nighthawk</h3></a>
-<a class="card" href="jets/yf23.html"><h3>YF-23</h3></a>
-<a class="card" href="jets/x47b.html"><h3>X-47B</h3></a>
-<a class="card" href="jets/kf21.html"><h3>KF-21 Boramae</h3></a>
+    <div class="card" onclick="openModal(
+      'JF-17 Thunder',
+      'jf17.jpg',
+      'Role: Multirole Fighter<br>Max Speed: Mach 1.6<br>Origin: Pakistan / China'
+    )">
+      <img src="jf17.jpg">
+      <div class="card-title">JF-17 Thunder</div>
+    </div>
 
+  </div>
 </section>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <img id="modalImg">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+function openModal(title, img, text) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitle").innerHTML = title;
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalText").innerHTML = text;
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
-
-
