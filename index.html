@@ -1,100 +1,417 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday 🎀</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffd6ec, #e6ccff, #ffffff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    .card {
-      background: white;
-      padding: 30px;
-      max-width: 420px;
-      width: 90%;
-      border-radius: 22px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(180, 120, 220, 0.35);
-      animation: fadeIn 1.2s ease;
-    }
+<meta charset="UTF-8">
 
-    h1 {
-      color: #c04cff;
-      margin-bottom: 10px;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h2 {
-      color: #ff6fae;
-      font-weight: 500;
-      margin-top: 0;
-    }
+<title>Cars & Jet Aviation</title>
 
-    p {
-      color: #555;
-      font-size: 15px;
-      line-height: 1.6;
-    }
 
-    button {
-      margin-top: 18px;
-      background: linear-gradient(135deg, #ff85c1, #b266ff);
-      border: none;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-size: 15px;
-      cursor: pointer;
-    }
 
-    button:hover {
-      opacity: 0.9;
-    }
+<style>
 
-    .hidden {
-      display: none;
-      margin-top: 20px;
-      font-size: 16px;
-      color: #8a2be2;
-    }
+:root {
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+--bg: #050a08;
+
+--card: #0e1f17;
+
+--green: #00c853;
+
+--white: #ffffff;
+
+}
+
+
+
+body {
+
+margin: 0;
+
+background: var(--bg);
+
+color: var(--white);
+
+font-family: Arial, sans-serif;
+
+}
+
+
+
+header {
+
+text-align: center;
+
+padding: 20px;
+
+border-bottom: 2px solid var(--green);
+
+}
+
+
+
+header h1 {
+
+color: var(--green);
+
+margin: 0;
+
+}
+
+
+
+section {
+
+padding: 25px;
+
+}
+
+
+
+h2 {
+
+color: var(--green);
+
+}
+
+
+
+.grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+gap: 15px;
+
+}
+
+
+
+.card {
+
+background: var(--card);
+
+border: 1px solid rgba(0,200,83,.4);
+
+border-radius: 10px;
+
+overflow: hidden;
+
+cursor: pointer;
+
+transition: 0.25s;
+
+}
+
+
+
+.card:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 0 15px rgba(0,200,83,.4);
+
+}
+
+
+
+.card img {
+
+width: 100%;
+
+height: 95px;
+
+object-fit: cover;
+
+}
+
+
+
+.card-title {
+
+text-align: center;
+
+font-size: 13px;
+
+padding: 8px;
+
+}
+
+
+
+/* MODAL */
+
+.modal {
+
+display: none;
+
+position: fixed;
+
+inset: 0;
+
+background: rgba(0,0,0,.85);
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 999;
+
+}
+
+
+
+.modal-box {
+
+background: #0b1a13;
+
+border: 2px solid var(--green);
+
+max-width: 500px;
+
+width: 90%;
+
+border-radius: 12px;
+
+padding: 20px;
+
+position: relative;
+
+}
+
+
+
+.modal-box img {
+
+width: 100%;
+
+border-radius: 8px;
+
+margin-bottom: 12px;
+
+}
+
+
+
+.modal-box h3 {
+
+color: var(--green);
+
+}
+
+
+
+.close {
+
+position: absolute;
+
+top: 10px;
+
+right: 14px;
+
+font-size: 22px;
+
+cursor: pointer;
+
+}
+
+</style>
+
 </head>
+
+
+
 <body>
 
-  <div class="card">
-    <h1>🎉 Happy 13th Birthday 🎉</h1>
-    <h2>✨ LOVE OF MY LIFE, ANNAAA!! ✨</h2>
 
-    <p>
-      May Allah grant you happiness, peace, and success 🤍  
-      May your days be filled with smiles and your future be bright 🌸
-    </p>
 
-    <button onclick="showSurprise()">Click for a Surprise 💝</button>
+<header>
 
-    <div id="surprise" class="hidden">
-      💜🎂 You are truly appreciated. Have the best birthday ever 🎂💜
-    </div>
-  </div>
+<h1>Cars & Jet Aviation Hub</h1>
 
-  <script>
-    function showSurprise() {
-      document.getElementById("surprise").style.display = "block";
-    }
-  </script>
+</header>
+
+
+
+<section>
+
+<h2>🚗 Cars</h2>
+
+<div class="grid" id="carsGrid"></div>
+
+</section>
+
+
+
+<section>
+
+<h2>✈️ Jet Aviation</h2>
+
+<div class="grid" id="jetsGrid"></div>
+
+</section>
+
+
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeModal()">✖</span>
+
+<img id="modalImg">
+
+<h3 id="modalTitle"></h3>
+
+<p id="modalText"></p>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const cars = [
+
+{
+
+name: "Bugatti Chiron",
+
+img: "images/cars/chiron.jpg",
+
+info: "The Bugatti Chiron is a mid-engine hypercar developed by Bugatti Automobiles. It uses an 8.0-liter quad-turbocharged W16 engine producing up to 1500 horsepower. Designed for extreme performance, it can exceed 420 km/h and represents the peak of modern automotive engineering."
+
+},
+
+{
+
+name: "Lamborghini Aventador SVJ",
+
+img: "images/cars/svj.jpg",
+
+info: "The Aventador SVJ is Lamborghini’s track-focused flagship. Powered by a naturally aspirated 6.5-liter V12 engine, it produces 770 horsepower. Advanced aerodynamics and lightweight materials allow it to dominate lap records worldwide."
+
+},
+
+{
+
+name: "Ferrari LaFerrari",
+
+img: "images/cars/laferrari.jpg",
+
+info: "LaFerrari is Ferrari’s first hybrid hypercar, combining a V12 engine with electric motors. The HY-KERS system boosts performance while improving efficiency, making it one of the most technologically advanced Ferraris ever built."
+
+},
+
+// 👉 ADD MORE (up to 30+ easily)
+
+];
+
+
+
+const jets = [
+
+{
+
+name: "F-22 Raptor",
+
+img: "images/jets/f22.jpg",
+
+info: "The F-22 Raptor is a fifth-generation stealth fighter developed by the United States. It features supercruise capability, thrust-vectoring, and advanced avionics, making it one of the most dominant air-superiority fighters in history."
+
+},
+
+{
+
+name: "JF-17 Thunder",
+
+img: "images/jets/jf17.jpg",
+
+info: "The JF-17 Thunder is a lightweight multirole fighter jointly developed by Pakistan and China. Designed for affordability and versatility, it supports modern avionics, beyond-visual-range missiles, and multirole combat missions."
+
+},
+
+{
+
+name: "Sukhoi Su-57",
+
+img: "images/jets/su57.jpg",
+
+info: "The Su-57 is Russia’s fifth-generation stealth fighter. It emphasizes supermaneuverability, advanced sensors, and multirole capabilities, combining stealth with high-performance aerodynamics."
+
+},
+
+// 👉 ADD MORE (up to 30+ easily)
+
+];
+
+
+
+function generateCards(list, containerId) {
+
+const grid = document.getElementById(containerId);
+
+list.forEach(item => {
+
+const card = document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<img src="${item.img}">
+
+<div class="card-title">${item.name}</div>
+
+`;
+
+card.onclick = () => openModal(item);
+
+grid.appendChild(card);
+
+});
+
+}
+
+
+
+function openModal(item) {
+
+document.getElementById("modal").style.display = "flex";
+
+document.getElementById("modalTitle").innerText = item.name;
+
+document.getElementById("modalImg").src = item.img;
+
+document.getElementById("modalText").innerText = item.info;
+
+}
+
+
+
+function closeModal() {
+
+document.getElementById("modal").style.display = "none";
+
+}
+
+
+
+generateCards(cars, "carsGrid");
+
+generateCards(jets, "jetsGrid");
+
+</script>
+
+
 
 </body>
+
 </html>
